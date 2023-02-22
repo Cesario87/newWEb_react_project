@@ -14,8 +14,8 @@ class Main extends Component {
 
   addArticle = (newArticle) => {
     console.log("Received new article:", newArticle);
-    const { main, abstract } = newArticle;
-    const formattedArticle = { main, abstract };
+    const { main, abstract, web_url } = newArticle;
+    const formattedArticle = { main, abstract, web_url };
     this.setState((prevState) => ({
       articles: [...prevState.articles, formattedArticle]
     }), () => {

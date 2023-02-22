@@ -5,20 +5,21 @@ class Form extends Component {
     super(props);
     this.state = {
       main: "",
-      abstract: ""
+      abstract: "",
+      web_url: ""
     };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { main, abstract } = this.state;
-    const newArticle = { main, abstract };
+    const { main, abstract, web_url } = this.state;
+    const newArticle = { main, abstract, web_url };
     this.props.addArticle(newArticle);
-    this.setState({ main: "", abstract: "" });
+    this.setState({ main: "", abstract: "", web_url: "" });
   };
 
   handleCancel = () => {
-    this.setState({ main: "", abstract: "" });
+    this.setState({ main: "", abstract: "", web_url: "" });
   };
 
   handleChange = (event) => {
@@ -27,7 +28,7 @@ class Form extends Component {
   };
 
   render() {
-    const { main, abstract } = this.state;
+    const { main, abstract, web_url } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -46,6 +47,16 @@ class Form extends Component {
             type="text"
             name="abstract"
             value={abstract}
+            onChange={this.handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Web_url:
+          <input
+            type="url"
+            name="web_url"
+            value={web_url}
             onChange={this.handleChange}
           />
         </label>
