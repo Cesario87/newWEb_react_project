@@ -6,48 +6,45 @@ class ListNews extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [],
-      loading: true
+      articles: this.props.articles
     };
   }
 
   componentDidMount() {
-    const apiUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=videogames&api-key=${process.env.REACT_APP_API_KEY}`;
-
-    axios.get(apiUrl)
+    axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=videogames&api-key=${process.env.REACT_APP_API_KEY}`)
       .then(response => {
-        const articles = response.data.response.docs.slice(0, 5); // get the first 5 articles
-        this.setState({ articles, loading: false });
+        const apiArticles = response.data.response.docs.slice(0, 5);
+        const articles = [...this.state.articles, ...apiArticles];
+        this.setState({ articles });
       })
-      .catch(error => console.error(error));
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-  handleDelete = (index) => {
-    this.setState(prevState => {
-      const articles = [...prevState.articles];
-      articles.splice(index, 1);
-      return { articles: articles };
-    });
-  };
+  //COMPONENTDIDUPDATE!!!!!!!
+
+  //VER EJEMPLO DE CLASE, BORRAR EVENTO!!!!!!!!!!!!!!!!!!!!
+  // handleDelete = (index) => {
+  //   const allArticles = this.allArticles();
+  //   allArticles.splice(index, 1); // remove the article at the specified index
+  //   this.setState({ articles: allArticles }, () => {
+  //     console.log("Deleted article at index:", index);
+  //   });
+  // }
 
   render() {
-    const { articles, loading } = this.state;
-    const allArticles = [...articles, ...this.props.articles];
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-    console.log("from form articles: ", this.props.articles);
+    const { articles } = this.state;
     return (
       <div>
-        {allArticles.map((article, index) => (
-          <div key={index}>
-            <Card article={article} />
-            <button onClick={() => this.handleDelete(index)}>🗑️</button>
-          </div>
+        {articles.map((article, index) => (
+        <div key={index}>
+          <Card article={article} />
+        </div>
         ))}
       </div>
     );
   }
 }
-export default ListNews;
 
+export default ListNews;
