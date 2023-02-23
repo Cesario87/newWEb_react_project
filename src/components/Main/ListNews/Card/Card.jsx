@@ -11,6 +11,7 @@ class Card extends Component {
         <h2>{title}</h2>
         <p>{abstract}</p>
         <a href={web_url}>Keep reading...</a>
+        <button onClick={this.props.onDelete}>Delete</button>
       </div>
     );
   }
