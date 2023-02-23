@@ -11,10 +11,16 @@ class ListNews extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=videogames&api-key=${process.env.REACT_APP_API_KEY}`)
+    axios
+      .get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=videogames&api-key=${process.env.REACT_APP_API_KEY}`)
       .then(response => {
         const apiArticles = response.data.response.docs.slice(0, 5);
-        const articles = [...this.state.articles, ...apiArticles];
+        const articles = [...this.state.articles];
+        apiArticles.forEach(apiArticle => {
+          if (!articles.find(article => article.web_url === apiArticle.web_url)) {
+            articles.push(apiArticle);
+          }
+        });
         this.setState({ articles });
       })
       .catch(error => {
@@ -22,25 +28,21 @@ class ListNews extends Component {
       });
   }
 
-  //COMPONENTDIDUPDATE!!!!!!!
-
-  //VER EJEMPLO DE CLASE, BORRAR EVENTO!!!!!!!!!!!!!!!!!!!!
-  // handleDelete = (index) => {
-  //   const allArticles = this.allArticles();
-  //   allArticles.splice(index, 1); // remove the article at the specified index
-  //   this.setState({ articles: allArticles }, () => {
-  //     console.log("Deleted article at index:", index);
-  //   });
-  // }
-
   render() {
     const { articles } = this.state;
     return (
       <div>
         {articles.map((article, index) => (
-        <div key={index}>
-          <Card article={article} />
-        </div>
+          <div key={index}>
+            <Card
+              article={article}
+              onDelete={() => {
+                const newArticles = [...articles];
+                newArticles.splice(index, 1);
+                this.setState({ articles: newArticles });
+              }}
+            />
+          </div>
         ))}
       </div>
     );
