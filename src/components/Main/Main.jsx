@@ -13,14 +13,13 @@ class Main extends Component {
   }
 
   addArticle = (newArticle) => {
-    console.log("Received new article:", newArticle);
+    console.log("All articles:", newArticle);
     const { main, abstract, web_url } = newArticle;
     const formattedArticle = { main, abstract, web_url };
     this.setState((prevState) => ({
       articles: [...prevState.articles, formattedArticle]
     }), () => {
-      console.log("New article added!");
-      console.log("All articles:", this.state.articles);
+      console.log("Added articles:", this.state.articles);
     });
   }
 
