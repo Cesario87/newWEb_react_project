@@ -5,6 +5,7 @@ import Main from './components/Main';
 import { userContext } from './context/userContext';
 import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [user, setUser] = useState("noName"); // state para componente funcional

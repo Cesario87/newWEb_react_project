@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./Card";
+import Cards from "./Card";
 import axios from "axios";
 
 class ListNews extends Component {
@@ -34,7 +34,7 @@ class ListNews extends Component {
       <div>
         {articles.map((article, index) => (
           <div key={index}>
-            <Card
+            <Cards
               article={article}
               onDelete={() => {
                 const newArticles = [...articles];
