@@ -31,7 +31,7 @@ class ListNews extends Component {
   render() {
     const { articles } = this.state;
     return (
-      <div>
+      <div className={"formatCards"}>
         {articles.map((article, index) => (
           <div key={index}>
             <Cards

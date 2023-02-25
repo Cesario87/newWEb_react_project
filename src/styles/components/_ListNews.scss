@@ -1,0 +1,9 @@
+@import '../utils/variables.scss';
+
+.formatCards{
+    display: flex;
+    flex-direction: row;
+    justify-content:first baseline;
+    flex-wrap: wrap;
+    margin: 2% 0% 0% 2%;
+}

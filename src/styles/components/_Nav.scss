@@ -2,10 +2,10 @@
 
 %nav-bar-basic{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    padding: 15px;
-    min-height: 10vh;
+    padding: 5px;
+    min-height: 5vh;
  
 
     &>*{
@@ -20,20 +20,19 @@
         }
     }
     &>span{
-        font-weight: bold; 
+        font-weight: bolder; 
     }
 }
 
 .nav-bar {
     @extend %nav-bar-basic;
-    background-color: $granate;
+    background-color: $orange;
 }
 
-.nav-bar__dark{
-    @extend %nav-bar-basic;
-    background-color: $purple;
-
+.user-span{
+    background-color:$pale-orange;
+    padding: 0.5% 1%;
+    color: $purple;
 }
-
 
 
