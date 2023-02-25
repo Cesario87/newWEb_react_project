@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { userContext } from '../../../context/userContext'; // contexto
+import Button from 'react-bootstrap/Button';
+import { InputGroup, Form } from 'react-bootstrap';
 
 class Home extends Component {
 
@@ -35,9 +37,19 @@ class Home extends Component {
   render() {
     return <div>
     <div>
-        <h1>Identify yourself</h1>
-        <input type="text" ref={this.username} onChange={this.handleChange} placeholder="Your username goes here..." />
-        {this.state.username ? <button onClick={this.sendName}>Login</button> : ""}
+        <h3>Welcome to Gamer News 👾</h3>
+        <InputGroup className="mb-3">
+        <InputGroup.Text id="basic-addon1">Username</InputGroup.Text>
+        <Form.Control
+          ref={this.username}
+          placeholder="Identify yourself..."
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          value={this.state.username}
+          onChange={this.handleChange}
+        />
+      </InputGroup>
+        {this.state.username ? <Button variant="info" onClick={this.sendName}>Login</Button>: ""}
       </div>
   </div>;
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from 'react-bootstrap/Button';
 
 class Form extends Component {
   constructor(props) {
@@ -61,10 +62,8 @@ class Form extends Component {
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
-        <button type="button" onClick={this.handleCancel}>
-          Clear
-        </button>
+        <Button variant="info" type="submit">Submit</Button>
+        <Button variant="secondary" type="button" onClick={this.handleCancel}>Clear</Button>
       </form>
     );
   }
