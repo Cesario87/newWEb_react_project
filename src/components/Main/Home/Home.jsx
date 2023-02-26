@@ -35,10 +35,9 @@ class Home extends Component {
   }
 
   render() {
-    return <div>
-    <div>
-        <h3>Welcome to Gamer News 👾</h3>
-        <InputGroup className="mb-3">
+    return <div className="formatHome">
+        <h1>Welcome to Gamer News 👾</h1>
+        <InputGroup className="mb-3" style={{ height: '10vh' }}>
         <InputGroup.Text id="basic-addon1">Username</InputGroup.Text>
         <Form.Control
           ref={this.username}
@@ -47,10 +46,10 @@ class Home extends Component {
           aria-describedby="basic-addon1"
           value={this.state.username}
           onChange={this.handleChange}
+          style={{ fontSize: '150%' }}
         />
       </InputGroup>
-        {this.state.username ? <Button variant="info" onClick={this.sendName}>Login</Button>: ""}
-      </div>
+        {this.state.username ? <Button variant="info" style={{ width: '30vw' }} onClick={this.sendName}>Login</Button>: ""}
   </div>;
   }
 }
