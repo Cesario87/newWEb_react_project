@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Home from './Home';
-import Form from './Form';
+import Forms from './Form';
 import ListNews from './ListNews';
 import { Routes, Route } from "react-router-dom";
 
@@ -25,10 +25,10 @@ class Main extends Component {
 
   render() {
     return (
-      <main>
+      <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Form addArticle={this.addArticle} />} />
+          <Route path="/form" element={<Forms addArticle={this.addArticle} />} />
           <Route path="/list" element={<ListNews articles={this.state.articles} />} />
         </Routes>
       </main>

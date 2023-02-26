@@ -1,0 +1,17 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+%footer-bar-basic{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:5vh;
+    color:white;
+    font-style: italic;
+    margin:0px;
+}
+
+.footer{
+    @extend %footer-bar-basic;
+    background-color:$orange;
+}

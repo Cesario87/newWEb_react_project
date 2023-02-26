@@ -11,7 +11,7 @@ class Nav extends Component {
     <Link to="/list">List of articles</Link>
     <userContext.Consumer>
         {({ logout, user }) => user ?
-          <span className={"user-span"}>Hi, {user} <Button variant="dark" onClick={logout}>Logout</Button>
+          <span className={"user-span"}>Hi, {user} <Button variant="dark" style={{ margin: '0 0 0 4vw' }} onClick={logout}>Logout</Button>
           </span>
           : ""
         }
