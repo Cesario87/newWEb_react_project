@@ -4,10 +4,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5px;
-    font-size: larger;
-    font-weight: bold;
-    min-height: 5vh;
+    font-size:smaller;
+    min-height: 8vh;
  
 
     &>*{
@@ -23,6 +21,7 @@
     }
     &>span{
         font-weight: bolder; 
+        padding: 1% 1%;
     }
 }
 
@@ -33,9 +32,23 @@
 
 .user-span{
     background-color:$pale-orange;
-    padding: 0.5% 1%;
     color: $purple;
     border-radius: 10px;
 }
 
+.nav-link {
+    width: 10%;
+    margin-right: 5%;
+}
+
+@media screen and (min-width: 1366px) {
+    .nav-link {
+        width: 20%;
+    }
+
+    %nav-bar-basic{
+        min-height: 10vh;
+        font-size: larger;
+    }
+}
 

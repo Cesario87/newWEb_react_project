@@ -47,10 +47,11 @@ class Forms extends Component {
           />
         </InputGroup>
         <br />
-        <InputGroup className="mb-3" style={{ height: '10vh' }}>
+        <InputGroup className="mb-3" style={{ height: '20vh' }}>
           <InputGroup.Text>Abstract</InputGroup.Text>
           <Form.Control
             placeholder="Your abstract goes here...
+            ........
             ........
             ........"
             as="textarea"
@@ -58,13 +59,14 @@ class Forms extends Component {
             name="abstract"
             value={abstract}
             onChange={this.handleChange}
+            style={{ resize: 'none' }}
           />
         </InputGroup>
         <br />
         <InputGroup className="mb-3" style={{ height: '10vh' }}>
           <InputGroup.Text>Web Url</InputGroup.Text>
           <Form.Control
-            placeholder="The link to your full article goes here..."
+            placeholder="Your article's link goes here..."
             type="url"
             name="web_url"
             value={web_url}

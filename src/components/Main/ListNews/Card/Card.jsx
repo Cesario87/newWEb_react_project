@@ -10,7 +10,7 @@ class Cards extends Component {
     const web_url = article.web_url;
     return (
       <div className={"formatEachCard"}>
-        <Card style={{ width: '18rem', padding: '0.5% 0%', margin: '4% 5%' }}>
+        <Card style={{ width: '22rem', padding: '0.5% 0%', margin: '4% 5%' }}>
           <Card.Body style={{ textAlign: 'left' }}>
             <Card.Title style={{ margin: '4% 0%' }}>{title}</Card.Title>
             <Card.Text>{abstract}</Card.Text>
