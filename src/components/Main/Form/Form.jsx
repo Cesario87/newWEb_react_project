@@ -36,8 +36,8 @@ class Forms extends Component {
     return this.state.isSubmitted ? <Navigate to='/list' /> :
       <section>
         <form className="formatForm" onSubmit={this.handleSubmit}>
-          <InputGroup className="mb-3" style={{ height: '10vh' }}>
-            <InputGroup.Text id="basic-addon1" style={{ padding: '0 26px' }}>Title</InputGroup.Text>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>
             <Form.Control
               ref={this.username}
               placeholder="Your title goes here..."
@@ -49,8 +49,7 @@ class Forms extends Component {
               onChange={this.handleChange}
             />
           </InputGroup>
-          <br />
-          <InputGroup className="mb-3" style={{ height: '20vh' }}>
+          <InputGroup className="mb-3">
             <InputGroup.Text>Abstract</InputGroup.Text>
             <Form.Control
               placeholder="Your abstract goes here...
@@ -58,15 +57,14 @@ class Forms extends Component {
             ........
             ........"
               as="textarea"
-              rows={3}
+              rows={10}
               name="abstract"
               value={abstract}
               onChange={this.handleChange}
-              style={{ resize: 'none' }}
+              className="abstractFormat"
             />
           </InputGroup>
-          <br />
-          <InputGroup className="mb-3" style={{ height: '10vh' }}>
+          <InputGroup className="mb-3">
             <InputGroup.Text>Web Url</InputGroup.Text>
             <Form.Control
               placeholder="Your article's link goes here..."
@@ -76,9 +74,10 @@ class Forms extends Component {
               onChange={this.handleChange}
             />
           </InputGroup>
-          <br />
-          <Button variant="info" type="submit" style={{ margin: '0 2vw 0 0' }}>Submit</Button>
-          <Button variant="secondary" type="button" style={{ margin: '0 0 0 2vw' }} onClick={this.handleCancel}>Clear</Button>
+          <div>
+          <Button variant="info" type="submit">Submit</Button>
+          <Button variant="secondary" type="button" onClick={this.handleCancel}>Clear</Button>
+          </div>
         </form>
       </section>
   }

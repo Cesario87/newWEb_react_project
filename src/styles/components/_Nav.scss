@@ -34,11 +34,25 @@
     background-color:$pale-orange;
     color: $purple;
     border-radius: 10px;
+    height: 10%;
+    margin: 0.5vh 0.5vw;
 }
 
-.nav-link {
-    width: 10%;
-    margin-right: 5%;
+.buttonFormat{
+    margin-left: 2vw;
+}
+
+.nav-link1 {
+    margin-left: 5%;
+    width: '0%'
+}
+
+.nav-link2 {
+    margin-left: 5%;
+}
+
+.nav-link3 {
+    margin-left: 1%;
 }
 
 @media screen and (min-width: 1366px) {

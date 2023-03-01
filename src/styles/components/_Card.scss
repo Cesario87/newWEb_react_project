@@ -4,4 +4,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    .each{
+        width: 23rem;
+        height: 17rem;
+        padding: 0.5% 0%;
+        margin: 4% 5%;
+    }
+
+    .bodyFormat{
+        text-align: left;
+    }
+
+    .cardTitle{
+        font-size: 150%;
+        margin: 2% 0%;
+    }
+
+    .cardAbstract{
+        margin: 5% 0 5% 0%;
+    }
+
+    .linkFormat{
+            margin: 0% 20% 0% 5%;
+            font-size: 18px;
+            font-style: italic;
+            color: rgb(57, 57, 152);
+    }
+
+    .buttonFormat{
+       border: 1px solid black;
+       height: 5vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .formatEachCard{
+        .buttonFormat{
+            height: 4vh;
+        }
+    }
 }

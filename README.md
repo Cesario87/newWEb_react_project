@@ -12,7 +12,7 @@ TECHNOLOGIES & TECHNIQUES 👨‍💻
 - SASS/SCSS
 - Unit testing with JEST
 - Mobile first
-- Deploy: Netlify
+- Deploy: Netlify (https://gleeful-mousse-d01662.netlify.app/)
 
 ## Routes 🌐
 ### / 
